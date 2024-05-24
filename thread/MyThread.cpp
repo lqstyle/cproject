@@ -35,7 +35,7 @@ T testAtomicInner(T t);
 
 int main() {
 
-  //testthreadLocal();
+  testthreadLocal();
   //testCallOnce();
   //testAtomic();
 //  testThread();
