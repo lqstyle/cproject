@@ -1,0 +1,7 @@
+# ninja log v5
+56	2167	7348923467179141	CMakeFiles/code.dir/Hello.cpp.obj	8b83ba7ed33ae2bf
+170	2213	7348923467318766	CMakeFiles/code.dir/MyMap.cpp.obj	789e509565feae4e
+7	3932	7348923484213576	CMakeFiles/code.dir/thread/MyThread.cpp.obj	bf21b5c7911fb970
+2214	3874	7348923483595224	CMakeFiles/code.dir/MyParam.cpp.obj	2ed1cb8e67a2b690
+2168	3934	7348923484423010	CMakeFiles/code.dir/MyVector.cpp.obj	315beca8aa930f6d
+2	2216	7382405597146398	build.ninja	d287e2a634da8a11
