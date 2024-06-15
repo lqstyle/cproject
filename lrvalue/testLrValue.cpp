@@ -1,30 +1,66 @@
 
 
 #include <string>
+#include <utility>
+#include <iostream>
+#include <vector>
+#include <memory>
 
 using String = ::std::string;
 
-int main() {
+
+class Student {
+
+public:
+    Student(std::string name, int age) : name(std::move(name)), age(age) {
+        std::cout << "con" << std::endl;
+    }
+
+    ~Student() {
+        std::cout << "dec" << std::endl;
+    };
 
 
-    String s = "123";
-    String s1 = s + "234";
+    Student(const Student &other) {
+        std::cout << "copy" << std::endl;
+    }
+
+    Student &operator=(Student &&other) noexcept {
+        std::cout << "move =" << std::endl;
+
+        if (this != &other) {
+            age = other.age;
+            name = other.name;
+        }
+        std::cout << "move =" << std::endl;
+        return *this;
+    }
+
+    // 拷贝赋值运算符
+    Student &operator=(const Student &other) {
+        if (this != &other) {
+            age = other.age;
+            name = other.name;
+        }
+        std::cout << "fees" << std::endl;
+        return *this;
+    }
 
 
-    String s2 = "123";
+public :
+    std::string name;
+    int age{};
+};
 
-    //左值引用
-    String &s3 = s2;
-
-    //右值引用
-    String &&s4 = "132";
-    const String &s5 = "111";
-
-    String &s6 = s4;
-
-
-    int i = 10;
-    int &j=i;
-    int &&j = ::std::move(i);
-    return 0;
-}
+//
+//int main() {
+//
+////    std::vector<std::unique_ptr<Student>> vector;
+////
+////    std::unique_ptr<Student> student = std::make_unique<Student>("lq", 11);
+////    std::unique_ptr<Student> student2 = std::make_unique<Student>("dd",22);
+////    vector.push_back(std::move(student));
+////    vector.push_back(std::move(student2));
+//
+//    return 0;
+//}

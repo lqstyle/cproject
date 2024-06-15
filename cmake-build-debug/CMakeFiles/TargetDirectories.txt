@@ -1,3 +1,3 @@
-/data/cproject/cproject/cmake-build-debug/CMakeFiles/code.dir
-/data/cproject/cproject/cmake-build-debug/CMakeFiles/edit_cache.dir
-/data/cproject/cproject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/project/cproject/cmake-build-debug/CMakeFiles/code.dir
+D:/project/cproject/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/project/cproject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
