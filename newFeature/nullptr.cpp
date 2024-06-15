@@ -1,3 +1,14 @@
+//https://subingwen.cn/cpp/nullptr/
+
+/**
+ * #ifndef NULL
+    #ifdef __cplusplus
+        #define NULL 0
+    #else
+        #define NULL ((void *)0)
+    #endif
+#endif
+ */
 #include<iostream>
 
 void test(int a) {
@@ -10,15 +21,10 @@ void test(char *a) {
 
 int main() {
 
-    int *a = NULL;
-    float *b = NULL;
-    double *c = NULL;
-//    char *d = NULL;
-    char *d = nullptr;
-//    void *e = NULL;
-    void *e = nullptr;
-    int *f =(int *)e;
+    char *e = NULL;
     test(1);
+    test((int)NULL);
+    test(e);
     test(nullptr);
     return 0;
 }
