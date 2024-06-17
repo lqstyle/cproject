@@ -20,7 +20,7 @@
 
  常量左值引用是一个万能引用类型，它可以接受左值、右值、常量左值和常量右值
  右值引用具有移动语义，移动语义可以将资源（堆、系统对象等）通过浅拷贝从一个对象转移到另一个对象这样就能减少不必要的临时对象的创建、拷贝以及销毁，可以大幅提高C++应用程序的性能。
-这通常被称为 “return-value optimization” 或 " RVO"
+  这通常被称为 “return-value optimization” 或 " RVO"
 
 && 特性 test04
  T&&或者auto&&这种未定引用类型，当它作为参数时，有可能被一个右值引用初始化，也有可能被一个左值引用初始化，在进行类型推导时右值引用类型（&&）会发生变化，这种变化被称为引用折叠
@@ -67,10 +67,10 @@ public:
         std::cout << "copy construct1: my name is tom1" << std::endl;
     }
 
-//    Test1(Test1 &&a) : m_num(a.m_num) {
-//        a.m_num = nullptr;
-//        std::cout << "move construct: my name is sunny1" << std::endl;
-//    }
+    Test1(Test1 &&a) : m_num(a.m_num) {
+        a.m_num = nullptr;
+        std::cout << "move construct: my name is sunny1" << std::endl;
+    }
 
 
     ~Test1() {
@@ -86,7 +86,10 @@ Test1 getObj1() {
 }
 
 
-void test1();
+void
+
+
+test1();
 
 void test2();
 
@@ -94,14 +97,14 @@ void test3();
 
 void test4();
 
-void test5();
+void test05();
 
 int main() {
-//    test1();
-//    test2();
+    test1();
+    test2();
     test3();
 
-//    test5();
+//    test05();
     return 0;
 }
 
@@ -109,6 +112,9 @@ void test1() {
     int a = 520;
     int b = 1314;
     a = b;
+    int i = 42;
+    int &c = ++i;
+//    int &d = i++;
 }
 
 void test2() {
@@ -116,7 +122,7 @@ void test2() {
 //    int &&a2 = a1;
 //    Test& t = getObj();
 //    Test && t = getObj();
-    const Test &t = getObj();
+//    const Test &t = getObj();
 }
 
 void test3() {

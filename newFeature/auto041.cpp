@@ -3,8 +3,8 @@
 /**
  * 使用auto声明的变量必须要进行初始化，以让编译器推导出它的实际类型，在编译时将auto占位符替换为真正的类型
  *
- * 当变量不是指针或者引用类型时，推导的结果中不会保留const、volatile关键字
- * 当变量是指针或者引用类型时，推导的结果中会保留const、volatile关键字
+ * 当变量不是指针或者引用类型时，推导的结果中不会保留const、volatile关键字 autoTest3
+ * 当变量是指针或者引用类型时，推导的结果中会保留const、volatile关键字   autoTest3
  *
  * 限制 ：1 不能作为函数参数使用
  *       2 不能用于类的非静态成员变量的初始化 静态非常量的初始化
@@ -31,18 +31,15 @@ int main() {
 //    autoTest();
 //    autoTest2();
 //    autoTest3();
-//    test4();
-    test5();
+    test4();
+//    test5();
     return 0;
 }
 
 void autoTest() {
     auto x = 3.14;
-    std::cout << typeid(x).name() << std::endl;
     auto y = 520;
-    std::cout << typeid(y).name() << std::endl;
     auto z = 'a';
-    std::cout << typeid(z).name() << std::endl;
 //    auto nb;
 //    auto double nbl;
 }
@@ -50,13 +47,9 @@ void autoTest() {
 void autoTest2() {
     int temp = 110;
     auto *a = &temp;
-    std::cout << typeid(*a).name() << std::endl;
     auto b = &temp;
-    std::cout << typeid(b).name() << std::endl;
     auto &c = temp;
-    std::cout << typeid(c).name() << std::endl;
     auto d = temp;
-    std::cout << typeid(d).name() << std::endl;
 }
 
 void autoTest3() {
@@ -123,17 +116,18 @@ void func() {
     std::cout << "val: " << val << std::endl;
 }
 
+template<class A, typename B>
+void func1() {
+    B val = A::get();
+    std::cout << "val: " << val << std::endl;
+}
+
 
 void test4() {
     func<T1>();
     func<T2>();
 }
 
-template<class A, typename B>
-void func1() {
-    B val = A::get();
-    std::cout << "val: " << val << std::endl;
-}
 
 void test5() {
     func1<T1, int>();

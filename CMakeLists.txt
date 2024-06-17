@@ -13,15 +13,15 @@ set(CMAKE_CXX_STANDARD 11)
 add_executable(code
 #        thread/MyThread.cpp
 #        lrvalue/testLrValue.cpp
-#        newFeature/OriginalLiteral.cpp
-#        newFeature/nullptr.cpp
-#        newFeature/constexpr.cpp
-#        newFeature/auto.cpp
-#        newFeature/decltype.cpp
+#        newFeature/OriginalLiteral01.cpp
+#        newFeature/nullptr02.cpp
+#        newFeature/constexpr03.cpp
+#        newFeature/auto041.cpp
+#        newFeature/decltype042.cpp
 #        newFeature/final.cpp
 #        newFeature/override.cpp
-#        newFeature/template.cpp
-#        newFeature/using.cpp
+#        newFeature/template07.cpp
+#        newFeature/using06.cpp
 #        newFeature/wrapandextend.cpp
         newFeature/lrvalue09.cpp
         #        Hello.cpp

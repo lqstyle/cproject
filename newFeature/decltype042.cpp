@@ -11,6 +11,7 @@
  *  3、表达式是一个左值，或者被括号( )包围，使用 decltype推导出的是表达式类型的引用（如果有const、volatile限定符不能忽略）
  *
  *  应用
+ *   泛型编程
  *   返回类型后置
  */
 
@@ -24,8 +25,6 @@ public:
     int number = 110;
 };
 
-void test2();
-
 
 //函数声明
 int func_int();                 // 返回值为 int
@@ -38,6 +37,10 @@ const int &&func_cint_rr();     // 返回值为 const int&&
 
 const Test func_ctest();        // 返回值为 const Test
 
+void test1();
+
+void test2();
+
 void test3();
 
 void test5();
@@ -47,10 +50,11 @@ void test6();
 void test7();
 
 int main() {
-//    test2();
-//    test3();
-//    test5();
-    test6();
+    test1();
+    test2();
+    test3();
+    test5();
+//    test6();
 //    test7();
 }
 
