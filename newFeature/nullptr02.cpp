@@ -20,6 +20,11 @@
     #endif
 #endif
 
+ 总结： C++ 的NULL取0 既可以强转成基础数据类型，也可以强转成指针类型，所以重载的时候就会出现二义性
+ C语言定义空指针使用的NULL是((void *)0)类型，无法隐式强转成其他类型的指针，所以使用0表示空指针
+ 所以C++ 11 引入了nullptr nullptrUK额恶意墙砖成基础数据类型，单独在新版本中表示空指针，使程序更健壮
+
+
  */
 #include<iostream>
 
@@ -34,15 +39,17 @@ void test(char *a) {
 int main() {
 
     int a = 10;
-//    ::std::cout << &a << ::std::endl;
-//    ::std::cout << a << ::std::endl;
+    ::std::cout << &a << ::std::endl;
+    ::std::cout << a << ::std::endl;
     char *e = NULL;
-    test(a);
+//    test(a);
 //    test(NULL);
 //    test((int)NULL);
 //    test((char *)NULL);
-//    test(e);
+//    int * da = ((void *)0);
+//    int d2 = (int)nullptr;
 //    char *c = nullptr;
+//    test(e);
 //    test(c);
 //    test(nullptr);
 //    test(((void *)0));

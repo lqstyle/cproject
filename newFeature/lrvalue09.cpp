@@ -1,6 +1,6 @@
 
 /**
- * lvalue 是loactor value的缩写，rvalue 是 read value的缩写  test01
+ * lvalue 是locator value的缩写，rvalue 是 read value的缩写  test01
 左值是指存储在内存中、有明确存储地址（可取地址）的数据；
 右值是指可以提供数据值的数据（不可取地址）；
  验证方法 ：可以对表达式取地址（&）就是左值，否则为右值
@@ -8,7 +8,7 @@
 
  右值又分为将忘值和纯右值
  一个是将亡值（ xvalue, expiring value），另一个则是纯右值（ prvalue, PureRvalue）
- 纯右值： 非引用返回的临时变量，运算表达式产生的临时变量，原始字面量，lambda表达式等
+ 纯右值： 非引用返回的临时变量，运算表达式产生的临时变量，原始字面量（通常存储字只读数据段中，没有独立的内存空间），lambda表达式（返回常量，临时对象）等
  将亡值： 与右值引用相关的表达式 例如 T&&类型函数的返回值 std::move的返回值
 
 
@@ -100,9 +100,9 @@ void test4();
 void test05();
 
 int main() {
-    test1();
+//    test1();
     test2();
-    test3();
+//    test3();
 
 //    test05();
     return 0;
@@ -117,7 +117,18 @@ void test1() {
 //    int &d = i++;
 }
 
+std::string get(){
+    return  std::string("123");
+}
 void test2() {
+    std::string  str ="hello";
+    std::string str1 = std::move(str);
+//    char *c = &"hello";
+//    ::std::cout << &c << ::std::endl;
+//    &1";
+//     &std::string("hello");
+//    &(1+2);
+//    &get();
     int a1;
 //    int &&a2 = a1;
 //    Test& t = getObj();
