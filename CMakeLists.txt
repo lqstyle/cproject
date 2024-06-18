@@ -14,8 +14,9 @@ add_executable(code
 #        thread/MyThread.cpp
 #        lrvalue/testLrValue.cpp
 #        newFeature/OriginalLiteral01.cpp
-        newFeature/nullptr02.cpp
-#        newFeature/constexpr03.cpp
+#        newFeature/nullptr02.cpp
+        newFeature/cancallbind10.cpp
+        #        newFeature/constexpr03.cpp
 #        newFeature/auto041.cpp
 #        newFeature/decltype042.cpp
 #        newFeature/final.cpp
